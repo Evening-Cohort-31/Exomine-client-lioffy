@@ -1,4 +1,153 @@
 {
-    "minerals":[],
-    "facilityMinerals": []
+"minerals":
+    [
+  {
+    "id": 1,
+    "name": "iron",
+    "cost": 10000
+  },
+  {
+    "id": 2,
+    "name": "Chromium",
+    "cost": 15000
+  },
+  {
+    "id": 3,
+    "name": "Molybdenum",
+    "cost": 25000
+  },
+  {
+    "id": 4,
+    "name": "Magnesium",
+    "cost": 12000
+  },
+  {
+    "id": 5,
+    "name": "Zinc",
+    "cost": 8000
+  },
+  {
+    "id": 6,
+    "name": "Nickel",
+    "cost": 22000
+  },
+  {
+    "id": 7,
+    "name": "Silicon",
+    "cost": 28000
+  }
+],
+"facilityMinerals": [],
+"governors": [
+    {
+      "id": 1,
+      "name": "Sabrina Carpenter",
+      "status": "active",
+      "colonyId": 6
+    },
+    {
+      "id": 2,
+      "name": "Ariana Grande",
+      "status": "active",
+      "colonyId": 1
+    },
+    {
+      "id": 3,
+      "name": "Britney Spears",
+      "status": "active",
+      "colonyId": 2
+    },
+    {
+      "id": 4,
+      "name": "Lisa Manobal",
+      "status": "inactive",
+      "colonyId": 4
+    },
+    {
+      "id": 5,
+      "name": "Jisoo Kim",
+      "status": "active",
+      "colonyId": 2
+    },
+    {
+      "id": 6,
+      "name": "Rosé Park",
+      "status": "inactive",
+      "colonyId": 5
+    },
+    {
+      "id": 7,
+      "name": "Hikaru Utada",
+      "status": "active",
+      "colonyId": 3
+    },
+    {
+      "id": 8,
+      "name": "Kyary Pamyu Pamyu",
+      "status": "inactive",
+      "colonyId": 4
+    },
+    {
+      "id": 9,
+      "name": "LiSA",
+      "status": "active",
+      "colonyId": 3
+    }
+  ],
+"colonies": [
+  {
+    "id": 1,
+    "name": "Earth",
+    "inventory": [
+      { "mineral": "Iron", "quantity": 100 },
+      { "mineral": "Nickel", "quantity": 100 },
+      { "mineral": "Zinc", "quantity": 100 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mars",
+    "inventory": [
+      { "mineral": "Chromium", "quantity": 100 },
+      { "mineral": "Magnesium", "quantity": 100 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Europa",
+    "inventory": [
+      { "mineral": "Molybdenum", "quantity": 100 },
+      { "mineral": "Silicon", "quantity": 100 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Titan",
+    "inventory": [
+      { "mineral": "Iron", "quantity": 100 },
+      { "mineral": "Magnesium", "quantity": 100 },
+      { "mineral": "Zinc", "quantity": 100 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ganymede",
+    "inventory": [
+      { "mineral": "Nickel", "quantity": 100 },
+      { "mineral": "Chromium", "quantity": 100 },
+      { "mineral": "Molybdenum", "quantity": 100 }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Callisto",
+    "inventory": [
+      { "mineral": "Iron", "quantity": 100 },
+      { "mineral": "Silicon", "quantity": 100 },
+      { "mineral": "Magnesium", "quantity": 100 }
+    ]
+  }
+],
+"facilities": [],
+"purchases": []
 }

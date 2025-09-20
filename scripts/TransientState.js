@@ -2,6 +2,8 @@ const state = {
 
 }
 
+// make setGovernor function
+
 export const setFacility = (facilityId) => {
     state.selectedFacility = facilityId
     document.dispatchEvent(new CustomEvent("stateChanged"))
