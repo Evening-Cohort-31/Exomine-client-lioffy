@@ -1,0 +1,65 @@
+/* layout.css */
+
+/* Main grid layout */
+.exomine {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Top half: controls + colony side by side */
+.exomine__controls,
+.exomine__colony {
+  flex: 1;
+}
+
+.exomine__controls {
+  flex-basis: 25%;
+}
+
+.exomine__colony {
+  flex-basis: 75%;
+}
+
+/* Align top panels in one row */
+.exomine {
+  display: grid;
+  grid-template-areas:
+    "controls colony"
+    "footer footer";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+}
+
+.exomine__controls {
+  grid-area: controls;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exomine__colony {
+  grid-area: colony;
+}
+
+.exomine__footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Bottom panels (facility minerals + purchase cart) */
+.facility__minerals,
+.purchase__cart {
+  flex: 1;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
