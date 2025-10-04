@@ -5,7 +5,7 @@
 // Make function handleGovernorChoice function
 
 const handleGovernorChoice = async (event) => {
-    if (event.target.id === "governors") {
+    if (event.target.id === "governors-dropdown") {
         let updatedGovernorOption = parseInt(event.target.value)
         setGovernor(updatedGovernorOption)
         console.log(updatedGovernorOption)
@@ -31,7 +31,7 @@ export const GovernorChoice = async () => {
                 <option 
                     name="governor" 
                     value="${governor.id}" 
-                    data-price="${governor.price}"> 
+                    data-status="${governor.status}"> 
                         ${governor.name} </option>
             `
         ;
