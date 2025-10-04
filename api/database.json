@@ -148,6 +148,12 @@
     ]
   }
 ],
-"facilities": [],
+ "facilities": [
+    { "id": 1, "name": "Lunar Mining Co.", "status": "active" },
+    { "id": 2, "name": "Mars Extractors Ltd.", "status": "active" },
+    { "id": 3, "name": "Europa Resource Works", "status": "active" },
+    { "id": 4, "name": "Titan Heavy Industries", "status": "inactive" },
+    { "id": 5, "name": "Asteroid Belt Collective", "status": "active" }
+  ],
 "purchases": []
 }
