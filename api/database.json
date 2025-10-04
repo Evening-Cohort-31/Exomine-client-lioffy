@@ -155,5 +155,14 @@
     { "id": 4, "name": "Titan Heavy Industries", "status": "inactive" },
     { "id": 5, "name": "Asteroid Belt Collective", "status": "active" }
   ],
-"purchases": []
+"purchases": [
+    {
+      "id": 1,
+      "governorId": 2,
+      "colonyId": 1,
+      "facilityId": 1,
+      "mineralId": 1,
+      "quantity": 1
+    }
+  ]
 }

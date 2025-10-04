@@ -7,6 +7,7 @@ const handleFacilityChoice = async (event) => {
     if (event.target.id === "facilities-dropdown") {
         const facilityId = parseInt(event.target.value)
         setFacility(facilityId)
+        console.log(facilityId)
     }
 };
 
