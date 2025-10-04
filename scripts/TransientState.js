@@ -1,13 +1,32 @@
 const state = {
-
+    governorId: 0,
+    colonyId: 0,
+    facilityId: 0,
+    mineralId: 0,
+    quantity: 0
 }
 
 // make setGovernor function
 
-export const setFacility = (facilityId) => {
-    state.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+export const setGovernor = (chosenGovernor) => {
+    state.governorId = chosenGovernor
 }
+
+export const setFacility = (chosenFacility) => {
+    state.facilityId = chosenFacility
+}
+
+export const setColony = (chosenColony) => {
+    state.colonyId = chosenColony
+}
+
+
+
+
+// export const setFacility = (facilityId) => {
+//     state.selectedFacility = facilityId
+//     document.dispatchEvent(new CustomEvent("stateChanged"))
+// }
 
 export const purchaseMineral = () => {
     /*
@@ -22,6 +41,9 @@ export const purchaseMineral = () => {
         Only the foolhardy try to solve this problem with code.
     */
 
+
+
+    // if ()
 
 
     document.dispatchEvent(new CustomEvent("stateChanged"))
