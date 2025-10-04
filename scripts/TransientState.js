@@ -8,7 +8,7 @@ const state = {
 
 // make setGovernor function
 
-export const setGovernor = (chosenGovernor) => {
+export const setGovernor = (chosenGovernor, chosenGovernorColony) => {
     state.governorId = chosenGovernor
 }
 
@@ -20,8 +20,10 @@ export const setColony = (chosenColony) => {
     state.colonyId = chosenColony
 }
 
-
-
+//clone of transient state
+export const getState = () => {
+    return { ...state }
+}
 
 // export const setFacility = (facilityId) => {
 //     state.selectedFacility = facilityId
