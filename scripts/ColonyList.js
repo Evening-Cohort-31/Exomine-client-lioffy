@@ -19,8 +19,8 @@ export const MineralSelection = async () => {
 
     let injectedHTML = `<ul>`;
 
-    const container = document.querySelector(".mineral__display");
-    const header = document.querySelector(".mineral__header");
+    const container = document.getElementById("colony-minerals");
+    const header = document.querySelector(".colony__header");
 
     if (colonyInventory.length > 0) {
         injectedHTML += colonyInventory.map((mineral) => `<li>${mineral.quantity} tons of ${mineral.mineral}</li>`).join("")
