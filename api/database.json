@@ -1,43 +1,42 @@
 {
-"minerals":
-    [
-  {
-    "id": 1,
-    "name": "Iron",
-    "cost": 10000
-  },
-  {
-    "id": 2,
-    "name": "Chromium",
-    "cost": 15000
-  },
-  {
-    "id": 3,
-    "name": "Molybdenum",
-    "cost": 25000
-  },
-  {
-    "id": 4,
-    "name": "Magnesium",
-    "cost": 12000
-  },
-  {
-    "id": 5,
-    "name": "Zinc",
-    "cost": 8000
-  },
-  {
-    "id": 6,
-    "name": "Nickel",
-    "cost": 22000
-  },
-  {
-    "id": 7,
-    "name": "Silicon",
-    "cost": 28000
-  }
-],
-"governors": [
+  "minerals": [
+    {
+      "id": 1,
+      "name": "Iron",
+      "cost": 10000
+    },
+    {
+      "id": 2,
+      "name": "Chromium",
+      "cost": 15000
+    },
+    {
+      "id": 3,
+      "name": "Molybdenum",
+      "cost": 25000
+    },
+    {
+      "id": 4,
+      "name": "Magnesium",
+      "cost": 12000
+    },
+    {
+      "id": 5,
+      "name": "Zinc",
+      "cost": 8000
+    },
+    {
+      "id": 6,
+      "name": "Nickel",
+      "cost": 22000
+    },
+    {
+      "id": 7,
+      "name": "Silicon",
+      "cost": 28000
+    }
+  ],
+  "governors": [
     {
       "id": 1,
       "name": "Sabrina Carpenter",
@@ -93,120 +92,377 @@
       "colonyId": 3
     }
   ],
-"colonies": [
-  {
-    "id": 1,
-    "name": "Earth",
-    "inventory": [
-      { "mineral": "Iron", "quantity": 100 },
-      { "mineral": "Nickel", "quantity": 100 },
-      { "mineral": "Zinc", "quantity": 100 }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Mars",
-    "inventory": [
-      { "mineral": "Chromium", "quantity": 100 },
-      { "mineral": "Magnesium", "quantity": 100 }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Europa",
-    "inventory": [
-      { "mineral": "Molybdenum", "quantity": 100 },
-      { "mineral": "Silicon", "quantity": 100 }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Titan",
-    "inventory": [
-      { "mineral": "Iron", "quantity": 100 },
-      { "mineral": "Magnesium", "quantity": 100 },
-      { "mineral": "Zinc", "quantity": 100 }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Ganymede",
-    "inventory": [
-      { "mineral": "Nickel", "quantity": 100 },
-      { "mineral": "Chromium", "quantity": 100 },
-      { "mineral": "Molybdenum", "quantity": 100 }
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Callisto",
-    "inventory": [
-      { "mineral": "Iron", "quantity": 100 },
-      { "mineral": "Silicon", "quantity": 100 },
-      { "mineral": "Magnesium", "quantity": 100 }
-    ]
-  }
-],
-"facilities": [
-  { 
-    "id": 1, 
-    "name": "Lunar Mining Co.",
-    "status": "active",
-    "inventory": [
-      { "mineral": "Iron", "quantity": 480 },
-      { "mineral": "Zinc", "quantity": 230 },
-      { "mineral": "Nickel", "quantity": 120 }
-    ]
-  },
-  { 
-    "id": 2, 
-    "name": "Mars Extractors Ltd.", 
-    "status": "active",
-    "inventory": [
-      { "mineral": "Chromium", "quantity": 300 },
-      { "mineral": "Magnesium", "quantity": 410 },
-      { "mineral": "Iron", "quantity": 210 }
-    ]
-  },
-  { 
-    "id": 3, 
-    "name": "Europa Resource Works", 
-    "status": "active",
-    "inventory": [
-      { "mineral": "Molybdenum", "quantity": 170 },
-      { "mineral": "Silicon", "quantity": 260 },
-      { "mineral": "Nickel", "quantity": 390 }
-    ]
-  },
-  { 
-    "id": 4, 
-    "name": "Titan Heavy Industries", 
-    "status": "inactive",
-    "inventory": [
-      { "mineral": "Iron", "quantity": 90 },
-      { "mineral": "Magnesium", "quantity": 240 },
-      { "mineral": "Zinc", "quantity": 130 }
-    ]
-  },
-  { 
-    "id": 5, 
-    "name": "Asteroid Belt Collective", 
-    "status": "active",
-    "inventory": [
-      { "mineral": "Silicon", "quantity": 320 },
-      { "mineral": "Chromium", "quantity": 450 },
-      { "mineral": "Molybdenum", "quantity": 200 }
-    ]
-  }
-],
-"purchases": [
+  "colonies": [
+    {
+      "id": 1,
+      "name": "Earth",
+      "inventory": [
+        {
+          "mineral": "Iron",
+          "quantity": 273
+        },
+        {
+          "mineral": "Nickel",
+          "quantity": 38
+        },
+        {
+          "mineral": "Zinc",
+          "quantity": 67
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mars",
+      "inventory": [
+        {
+          "mineral": "Chromium",
+          "quantity": 157
+        },
+        {
+          "mineral": "Magnesium",
+          "quantity": 31
+        },
+        {
+          "mineral": "Zinc",
+          "quantity": 1
+        },
+        {
+          "mineral": "Silicon",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Europa",
+      "inventory": [
+        {
+          "mineral": "Molybdenum",
+          "quantity": 318
+        },
+        {
+          "mineral": "Silicon",
+          "quantity": 94
+        },
+        {
+          "mineral": "Nickel",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Titan",
+      "inventory": [
+        {
+          "mineral": "Iron",
+          "quantity": 273
+        },
+        {
+          "mineral": "Magnesium",
+          "quantity": 46
+        },
+        {
+          "mineral": "Zinc",
+          "quantity": 12
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ganymede",
+      "inventory": [
+        {
+          "mineral": "Nickel",
+          "quantity": 22
+        },
+        {
+          "mineral": "Chromium",
+          "quantity": 155
+        },
+        {
+          "mineral": "Molybdenum",
+          "quantity": 19
+        },
+        {
+          "mineral": "Magnesium",
+          "quantity": 1
+        },
+        {
+          "mineral": "Iron",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Callisto",
+      "inventory": [
+        {
+          "mineral": "Iron",
+          "quantity": 38
+        },
+        {
+          "mineral": "Silicon",
+          "quantity": 67
+        },
+        {
+          "mineral": "Magnesium",
+          "quantity": 123
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "name": "Lunar Mining Co.",
+      "status": "active",
+      "inventory": [
+        {
+          "mineral": "Iron",
+          "quantity": 480
+        },
+        {
+          "mineral": "Zinc",
+          "quantity": 229
+        },
+        {
+          "mineral": "Nickel",
+          "quantity": 120
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mars Extractors Ltd.",
+      "status": "active",
+      "inventory": [
+        {
+          "mineral": "Chromium",
+          "quantity": 300
+        },
+        {
+          "mineral": "Magnesium",
+          "quantity": 409
+        },
+        {
+          "mineral": "Iron",
+          "quantity": 206
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Europa Resource Works",
+      "status": "active",
+      "inventory": [
+        {
+          "mineral": "Molybdenum",
+          "quantity": 169
+        },
+        {
+          "mineral": "Silicon",
+          "quantity": 255
+        },
+        {
+          "mineral": "Nickel",
+          "quantity": 384
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Titan Heavy Industries",
+      "status": "inactive",
+      "inventory": [
+        {
+          "mineral": "Iron",
+          "quantity": 90
+        },
+        {
+          "mineral": "Magnesium",
+          "quantity": 240
+        },
+        {
+          "mineral": "Zinc",
+          "quantity": 130
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Asteroid Belt Collective",
+      "status": "active",
+      "inventory": [
+        {
+          "mineral": "Silicon",
+          "quantity": 320
+        },
+        {
+          "mineral": "Chromium",
+          "quantity": 450
+        },
+        {
+          "mineral": "Molybdenum",
+          "quantity": 200
+        }
+      ]
+    }
+  ],
+  "purchases": [
     {
       "id": 1,
       "governorId": 2,
       "colonyId": 1,
       "facilityId": 1,
-      "mineralId": 1,
+      "mineralName": "Iron",
       "quantity": 1
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 2,
+      "mineralName": "Magnesium",
+      "quantity": 1,
+      "id": 2
+    },
+    {
+      "governorId": 5,
+      "colonyId": 2,
+      "facilityId": 1,
+      "mineralName": "Zinc",
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 2,
+      "mineralName": "Iron",
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 2,
+      "mineralName": "Iron",
+      "quantity": 1,
+      "id": 5
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 2,
+      "mineralName": "Iron",
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 2,
+      "mineralName": "Iron",
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 10
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 11
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 12
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 13
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 14
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 15
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 16
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 17
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Molybdenum",
+      "quantity": 1,
+      "id": 18
+    },
+    {
+      "governorId": 5,
+      "colonyId": 2,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 19
     }
   ]
 }
