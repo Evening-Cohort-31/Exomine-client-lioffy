@@ -3,7 +3,7 @@
     [
   {
     "id": 1,
-    "name": "iron",
+    "name": "Iron",
     "cost": 10000
   },
   {
@@ -37,7 +37,6 @@
     "cost": 28000
   }
 ],
-"facilityMinerals": [],
 "governors": [
     {
       "id": 1,
@@ -148,13 +147,58 @@
     ]
   }
 ],
- "facilities": [
-    { "id": 1, "name": "Lunar Mining Co.", "status": "active" },
-    { "id": 2, "name": "Mars Extractors Ltd.", "status": "active" },
-    { "id": 3, "name": "Europa Resource Works", "status": "active" },
-    { "id": 4, "name": "Titan Heavy Industries", "status": "inactive" },
-    { "id": 5, "name": "Asteroid Belt Collective", "status": "active" }
-  ],
+"facilities": [
+  { 
+    "id": 1, 
+    "name": "Lunar Mining Co.",
+    "status": "active",
+    "inventory": [
+      { "mineral": "Iron", "quantity": 480 },
+      { "mineral": "Zinc", "quantity": 230 },
+      { "mineral": "Nickel", "quantity": 120 }
+    ]
+  },
+  { 
+    "id": 2, 
+    "name": "Mars Extractors Ltd.", 
+    "status": "active",
+    "inventory": [
+      { "mineral": "Chromium", "quantity": 300 },
+      { "mineral": "Magnesium", "quantity": 410 },
+      { "mineral": "Iron", "quantity": 210 }
+    ]
+  },
+  { 
+    "id": 3, 
+    "name": "Europa Resource Works", 
+    "status": "active",
+    "inventory": [
+      { "mineral": "Molybdenum", "quantity": 170 },
+      { "mineral": "Silicon", "quantity": 260 },
+      { "mineral": "Nickel", "quantity": 390 }
+    ]
+  },
+  { 
+    "id": 4, 
+    "name": "Titan Heavy Industries", 
+    "status": "inactive",
+    "inventory": [
+      { "mineral": "Iron", "quantity": 90 },
+      { "mineral": "Magnesium", "quantity": 240 },
+      { "mineral": "Zinc", "quantity": 130 }
+    ]
+  },
+  { 
+    "id": 5, 
+    "name": "Asteroid Belt Collective", 
+    "status": "active",
+    "inventory": [
+      { "mineral": "Silicon", "quantity": 320 },
+      { "mineral": "Chromium", "quantity": 450 },
+      { "mineral": "Molybdenum", "quantity": 200 }
+    ]
+  }
+],
 "purchases": [
     {
       "id": 1,

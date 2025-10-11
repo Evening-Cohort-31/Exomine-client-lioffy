@@ -5,19 +5,20 @@ import { GovernorChoice } from "./GovernorsList.js";
 // import function for HTML code for facilities dropdown
 import { FacilityChoice } from "./MiningFacilities.js"
 // import function for HTML code for minerals available at each facility
-//import { MineralSelection } from "./ColonyList.js"
+//import { MineralSelectionOptionsRadioList } from "./MiningFacilities.js";
 //import function for HTML code for purchase button
-//import { PurchaseButton } from "./PurchaseButton.js"
+import { PurchaseButton } from "./PurchaseButton.js"
 
 // target #container with querySelector
 const container = document.getElementById("exomine");
 
 // make render async function that will inject/update all the HTML into the DOM and attaches event listeners
 const render = async () => {
-    const governorHTML = await GovernorChoice();
-    const facilityHTML = await FacilityChoice();
+  const governorHTML = await GovernorChoice();
+  const facilityHTML = await FacilityChoice();
+  const purchaseButtonHTML = PurchaseButton();
 
-    const composedHTML = `
+  const composedHTML = `
       
       <!-- Left Control Panel -->
       <aside class="exomine__controls">
@@ -42,22 +43,25 @@ const render = async () => {
       <footer class="exomine__footer">
         <section class="facility facility__minerals">
           <h2 class="facility__header">Facility Minerals</h2>
-          <!-- dynamic mineral list -->
+          <div id="facility-minerals" class="facility__minerals-display">
+          <!-- dynamic content -->
+          </div>
         </section>
 
         <section class="purchase purchase__cart">
           <h2 class="purchase__header">Space Cart</h2>
-          <!-- dynamic purchase button + info -->
+          <div class="purchase__items"><!-- dynamic content --></div>
+          ${purchaseButtonHTML}
         </section>
       </footer>
   `;
 
-    container.innerHTML = composedHTML;
+  container.innerHTML = composedHTML;
 };
 
 document.addEventListener("stateChanged", event => {
-    console.log("State of data has changed. Regenerating HTML ....")
-    render()
+  console.log("State of data has changed. Regenerating HTML ....")
+  render()
 })
 
 render()
