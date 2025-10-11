@@ -1,59 +1,53 @@
 /* layout.css */
 
-/* Main grid layout */
-.exomine {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  gap: 1rem;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-/* Top half: controls + colony side by side */
-.exomine__controls,
-.exomine__colony {
-  flex: 1;
-}
-
-.exomine__controls {
-  flex-basis: 25%;
-}
-
-.exomine__colony {
-  flex-basis: 75%;
-}
-
-/* Align top panels in one row */
-.exomine {
+/* ---------- MAIN GRID CONTAINER ---------- */
+#exomine {
   display: grid;
   grid-template-areas:
     "controls colony"
     "footer footer";
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr 1fr; /* left panel smaller */
+  grid-template-rows: auto auto; /* top row grows with content */
   gap: 1rem;
+  padding: 1rem;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
+/* ---------- TOP LEFT: Controls ---------- */
 .exomine__controls {
   grid-area: controls;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: rgba(10, 15, 40, 0.8);
+  padding: 1rem;
+  border: 1px solid #243354;
+  border-radius: 6px;
 }
 
+/* ---------- TOP RIGHT: Colony Panel ---------- */
 .exomine__colony {
   grid-area: colony;
+  background-color: rgba(10, 15, 40, 0.8);
+  padding: 1rem;
+  border: 1px solid #243354;
+  border-radius: 6px;
 }
 
+/* ---------- BOTTOM ROW: Footer ---------- */
 .exomine__footer {
   grid-area: footer;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  background-color: rgba(10, 15, 40, 0.8);
+  padding: 1rem;
+  border: 1px solid #243354;
+  border-radius: 6px;
 }
 
-/* Bottom panels (facility minerals + purchase cart) */
+/* ---------- Bottom panels inside footer ---------- */
 .facility__minerals,
 .purchase__cart {
   flex: 1;
@@ -62,4 +56,16 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
+  border: 2px solid #00b7ff;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  #exomine {
+    grid-template-areas:
+      "controls"
+      "colony"
+      "footer";
+    grid-template-columns: 1fr;
+  }
 }

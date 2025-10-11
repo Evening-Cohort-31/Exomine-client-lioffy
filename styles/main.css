@@ -132,3 +132,162 @@ button:disabled {
 .purchase__header {
   color: #ffdb58;
 }
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Container label — inline block so they line up neatly */
+.facility__mineral-option {
+  display: inline-block;
+  margin: 0.4rem 0.8rem 0.4rem 0;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #00b7ff;
+  border-radius: 6px;
+  background: rgba(0, 183, 255, 0.05);
+  color: #e0e6ff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover & active state for the label */
+.facility__mineral-option:hover {
+  background: rgba(0, 183, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 183, 255, 0.3);
+}
+
+/* The radio button itself — enlarge and recolor */
+.facilityMineral {
+  appearance: none; /* remove browser default look */
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  border: 2px solid #00b7ff;
+  border-radius: 50%;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Inner glow when selected */
+.facilityMineral:checked {
+  background-color: #00b7ff;
+  box-shadow: 0 0 10px #00b7ff, 0 0 20px #0078ff;
+  border-color: #00d1ff;
+}
+
+/* Focus ring for accessibility */
+.facilityMineral:focus {
+  outline: none;
+  box-shadow: 0 0 6px #00d1ff;
+}
+
+.facilityMineral:checked + span {
+  background: rgba(0, 183, 255, 0.25);
+  border-color: #00d1ff;
+}
+
+/* ---------- Purchase Items (Space Cart) ---------- */
+.purchase__items {
+  background: rgba(0, 183, 255, 0.08);
+  border: 1px solid #00b7ff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  min-height: 80px;
+  color: #e0e6ff;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: inset 0 0 10px rgba(0, 183, 255, 0.2);
+  overflow-y: auto;
+  max-height: 200px; /* so it scrolls if too many items */
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* When items are added, give a subtle “activity” pulse */
+.purchase__items.active {
+  background: rgba(0, 183, 255, 0.15);
+  border-color: #00d1ff;
+  box-shadow: 0 0 10px rgba(0, 183, 255, 0.3);
+  animation: cartPulse 0.4s ease;
+}
+
+/* Each line item in the cart */
+.purchase__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(0, 183, 255, 0.15);
+}
+
+.purchase__item:last-child {
+  border-bottom: none;
+}
+
+/* Mineral name styling */
+.purchase__item-name {
+  font-weight: 600;
+  color: #00d1ff;
+}
+
+/* Quantity or details styling */
+.purchase__item-qty {
+  color: #ffdb58; /* matches your purchase header highlight */
+  font-size: 0.9rem;
+}
+
+/* Empty cart message */
+.purchase__items p.empty {
+  color: #7f8cb0;
+  font-style: italic;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.purchase__item {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Fade-in animation for new items selected */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle pulsing effect when item added above purchase button*/
+@keyframes cartPulse {
+  0% {
+    box-shadow: 0 0 5px #00b7ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #00d1ff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00b7ff;
+  }
+}

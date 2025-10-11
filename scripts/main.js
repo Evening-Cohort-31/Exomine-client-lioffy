@@ -7,7 +7,7 @@ import { FacilityChoice } from "./MiningFacilities.js"
 // import function for HTML code for minerals available at each facility
 //import { MineralSelectionOptionsRadioList } from "./MiningFacilities.js";
 //import function for HTML code for purchase button
-//import { PurchaseButton } from "./PurchaseButton.js"
+import { PurchaseButton } from "./PurchaseButton.js"
 
 // target #container with querySelector
 const container = document.getElementById("exomine");
@@ -16,6 +16,7 @@ const container = document.getElementById("exomine");
 const render = async () => {
   const governorHTML = await GovernorChoice();
   const facilityHTML = await FacilityChoice();
+  const purchaseButtonHTML = PurchaseButton();
 
   const composedHTML = `
       
@@ -49,7 +50,8 @@ const render = async () => {
 
         <section class="purchase purchase__cart">
           <h2 class="purchase__header">Space Cart</h2>
-          <!-- dynamic purchase button + info -->
+          <div class="purchase__items"><!-- dynamic content --></div>
+          ${purchaseButtonHTML}
         </section>
       </footer>
   `;

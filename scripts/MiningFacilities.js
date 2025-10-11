@@ -1,24 +1,21 @@
 // import setter function from TransientState.js
-import { setFacility } from "./TransientState.js"
-import { getState } from "./TransientState.js"
+import { setFacility } from "./TransientState.js";
 
 // Make function handleFacilityChoice function
 const handleFacilityChoice = async (event) => {
-    debugger
     if (event.target.id === "facilities-dropdown") {
         const facilityId = parseInt(event.target.value)
         setFacility(facilityId)
         console.log(facilityId)
 
-        const defaultDropdown = document.getElementById("facilities-dropdown");
+        // Display minerals available at the selected facility
+        const facilityMineralsContainer = document.getElementById("facility-minerals");
+        facilityMineralsContainer.innerHTML = "<p>Loading minerals...</p>";
 
-        console.log(defaultDropdown.options[defaultDropdown.selectedIndex].value)
-
-        if (parseInt(defaultDropdown.options[defaultDropdown.selectedIndex].value) === facilityId) {
-            MineralSelectionListForSelectedFacility(facilityId);
-        }
+        // Fetch and display minerals for the selected facility
+        const mineralsHTML = await MineralsChoice(facilityId);
+        facilityMineralsContainer.innerHTML = mineralsHTML;
     }
-
 };
 
 // Make function FacilityChoice async function 
@@ -46,54 +43,84 @@ export const FacilityChoice = async () => {
     return html;
 };
 
-// This function will do an API call to fetch facilities data
+export const handleMineralChoice = (event) => {
+    // Check that a mineral radio was clicked
+    if (event.target.classList.contains("facilityMineral")) {
+        const selectedMineral = event.target.value;
+        // Get the container where selected minerals will be displayed right above the purchase button
+        const purchaseItemsContainer = document.querySelector(".purchase__items");
 
-// Function maps/loops facilities data array to create the dropdown list HTML for the facilities and populates the "facility minerals" container 
+        // Log selection (for debugging)
+        console.log(`Selected mineral: ${selectedMineral}`);
 
-export const MineralSelectionListForSelectedFacility = async (facilityId) => {
-    // Fetch all facilities
+        // Replace existing content with the new selection
+        purchaseItemsContainer.innerHTML = `
+      <div class="purchase__item active">
+        <span class="purchase__item-name">${selectedMineral}</span>
+        <span class="purchase__item-qty">1 ton</span>
+      </div>
+    `;
+
+        // Add a subtle visual pulse for user feedback
+        purchaseItemsContainer.classList.add("active");
+        // Remove the pulse effect after a short delay
+        setTimeout(() => purchaseItemsContainer.classList.remove("active"), 400);
+    }
+};
+
+
+// Function to create the "Facility Minerals" container that displays the minerals available at the selected facility
+export const MineralsChoice = async (facilityId) => {
+    // Fetch facilities to get the selected facility's inventory
     const response = await fetch("http://localhost:8088/facilities");
     const facilities = await response.json();
 
-    // Find the selected facility
+    // Find the selected facility among the fetched facilities
     const selectedFacility = facilities.find(facility => facility.id === facilityId);
 
-    // If the facility doesn’t exist or is inactive
+    // If no facility is found or if the facility is inactive, return a message
     if (!selectedFacility || selectedFacility.status !== "active") {
-        document.getElementById("facility-minerals").innerHTML =
-            "<p class='error'>No active facility selected or facility not found.</p>";
-        return;
+        return "<p class='error'>No active facility selected or facility not found.</p>";
     }
 
-    // Build HTML for minerals available at this one facility
-    const mineralOptions = selectedFacility.inventory
-        .map(inventory => {
-            if (inventory.quantity <= 0) return ""; // skip depleted minerals
-            return `
-        <label class="facility__mineral-option">
-          <input
-            type="radio"
-            class="facilityMineral"
-            name="minerals"
-            data-facility-id="${selectedFacility.id}"
-            data-facility-name="${selectedFacility.name}"
-            value="${inventory.mineral}"
-          />
-          ${inventory.quantity} tons of ${inventory.mineral}
-        </label>
-      `;
-        })
+    // Update the header to reflect the selected facility's name
+    const containerHeader = document.querySelector(".facility__minerals .facility__header");
+    if (containerHeader) {
+        containerHeader.textContent = `Minerals at ${selectedFacility.name}`;
+    }
+
+    document.addEventListener("change", handleMineralChoice);
+
+    // start building the HTML for the minerals list
+    let html = ``;
+
+    // Create radio buttons for each mineral in the selected facility's inventory
+    const mineralOptionsHTML = selectedFacility.inventory
+        // Only show minerals with quantity greater than 0
+        .filter(inventoryMineral => inventoryMineral.quantity > 0)
+        // Transform minerals array into HTML radio button options
+        .map(inventoryMineral => `
+      <label class="facility__mineral-option">
+        <input
+          type="radio"
+          class="facilityMineral"
+          name="minerals"
+          data-facility-id="${selectedFacility.id}"
+          value="${inventoryMineral.mineral}"
+        />
+        <span>${inventoryMineral.quantity} tons of ${inventoryMineral.mineral}</span>
+      </label>
+    `)
+        // Join the array of HTML strings into a single string
         .join("");
 
-    const html = `
-    <h2>Minerals for ${selectedFacility.name}</h2>
+    // Wrap the mineral options in a fieldset for better accessibility
+    html += `
     <fieldset class="facility__group">
-      <legend>${selectedFacility.name}</legend>
-      ${mineralOptions || "<p>No minerals available at this facility.</p>"}
+      <legend class="visually-hidden">${selectedFacility.name}</legend>
+      ${mineralOptionsHTML || "<p>No minerals available at this facility.</p>"}
     </fieldset>
   `;
 
-    // Inject into container
-    const container = document.querySelector(".facility-minerals");
-    container.innerHTML = html;
+    return html;
 };
