@@ -267,6 +267,35 @@ fieldset {
   animation: fadeIn 0.3s ease forwards;
 }
 
+/* ---------- Success message styling ---------- */
+.purchase__success {
+  text-align: center;
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  animation: successFadeIn 0.4s ease;
+  text-shadow: 0 0 8px #00d1ff, 0 0 15px #00b7ff;
+}
+
+/* Fade-in animation */
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade-out class (used by setTimeout) */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
 /* Fade-in animation for new items selected */
 @keyframes fadeIn {
   from {

@@ -1,6 +1,5 @@
 // import setter function from TransientState.js
  import { setGovernor } from "./TransientState.js"
- import { getState } from "./TransientState.js"
  import { MineralSelection } from "./ColonyList.js"
  
 // Make function handleGovernorChoice function
@@ -10,7 +9,6 @@ const handleGovernorChoice = async (event) => {
         let updatedGovernorOption = parseInt(event.target.value)
         setGovernor(updatedGovernorOption)
         document.addEventListener("change", MineralSelection())
-        console.log(getState())
     }
 }
 // Make function GovernorChoice async function 

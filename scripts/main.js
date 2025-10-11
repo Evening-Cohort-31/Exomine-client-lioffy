@@ -4,8 +4,8 @@ import { GovernorChoice } from "./GovernorsList.js";
 //import { ColonyChoice } from "./ColonyList.js"
 // import function for HTML code for facilities dropdown
 import { FacilityChoice } from "./MiningFacilities.js"
-// import function for HTML code for minerals available at each facility
-//import { MineralSelectionOptionsRadioList } from "./MiningFacilities.js";
+// import function for handling purchase button click event
+import { handlePurchaseChoices } from "./PurchaseButton.js"
 //import function for HTML code for purchase button
 import { PurchaseButton } from "./PurchaseButton.js"
 
@@ -58,6 +58,8 @@ const render = async () => {
 
   container.innerHTML = composedHTML;
 };
+
+document.addEventListener("click", handlePurchaseChoices);
 
 document.addEventListener("stateChanged", event => {
   console.log("State of data has changed. Regenerating HTML ....")
