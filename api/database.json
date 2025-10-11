@@ -99,15 +99,15 @@
       "inventory": [
         {
           "mineral": "Iron",
-          "quantity": 100
+          "quantity": 273
         },
         {
           "mineral": "Nickel",
-          "quantity": 100
+          "quantity": 38
         },
         {
           "mineral": "Zinc",
-          "quantity": 100
+          "quantity": 67
         }
       ]
     },
@@ -117,14 +117,18 @@
       "inventory": [
         {
           "mineral": "Chromium",
-          "quantity": 100
+          "quantity": 157
         },
         {
           "mineral": "Magnesium",
-          "quantity": 100
+          "quantity": 31
         },
         {
           "mineral": "Zinc",
+          "quantity": 1
+        },
+        {
+          "mineral": "Silicon",
           "quantity": 1
         }
       ]
@@ -135,11 +139,15 @@
       "inventory": [
         {
           "mineral": "Molybdenum",
-          "quantity": 100
+          "quantity": 318
         },
         {
           "mineral": "Silicon",
-          "quantity": 100
+          "quantity": 94
+        },
+        {
+          "mineral": "Nickel",
+          "quantity": 5
         }
       ]
     },
@@ -149,15 +157,15 @@
       "inventory": [
         {
           "mineral": "Iron",
-          "quantity": 100
+          "quantity": 273
         },
         {
           "mineral": "Magnesium",
-          "quantity": 100
+          "quantity": 46
         },
         {
           "mineral": "Zinc",
-          "quantity": 100
+          "quantity": 12
         }
       ]
     },
@@ -167,15 +175,15 @@
       "inventory": [
         {
           "mineral": "Nickel",
-          "quantity": 100
+          "quantity": 22
         },
         {
           "mineral": "Chromium",
-          "quantity": 100
+          "quantity": 155
         },
         {
           "mineral": "Molybdenum",
-          "quantity": 100
+          "quantity": 19
         },
         {
           "mineral": "Magnesium",
@@ -193,15 +201,15 @@
       "inventory": [
         {
           "mineral": "Iron",
-          "quantity": 100
+          "quantity": 38
         },
         {
           "mineral": "Silicon",
-          "quantity": 100
+          "quantity": 67
         },
         {
           "mineral": "Magnesium",
-          "quantity": 100
+          "quantity": 123
         }
       ]
     }
@@ -252,15 +260,15 @@
       "inventory": [
         {
           "mineral": "Molybdenum",
-          "quantity": 170
+          "quantity": 169
         },
         {
           "mineral": "Silicon",
-          "quantity": 260
+          "quantity": 255
         },
         {
           "mineral": "Nickel",
-          "quantity": 390
+          "quantity": 384
         }
       ]
     },
@@ -359,6 +367,102 @@
       "mineralName": "Iron",
       "quantity": 1,
       "id": 7
+    },
+    {
+      "governorId": 6,
+      "colonyId": 5,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 10
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 11
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 12
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 13
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 14
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 15
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 16
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Nickel",
+      "quantity": 1,
+      "id": 17
+    },
+    {
+      "governorId": 7,
+      "colonyId": 3,
+      "facilityId": 3,
+      "mineralName": "Molybdenum",
+      "quantity": 1,
+      "id": 18
+    },
+    {
+      "governorId": 5,
+      "colonyId": 2,
+      "facilityId": 3,
+      "mineralName": "Silicon",
+      "quantity": 1,
+      "id": 19
     }
   ]
 }

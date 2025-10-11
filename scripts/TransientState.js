@@ -62,18 +62,28 @@ export const updateColonyMinerals = async (governorId) => {
 
 //Clears purchase__items and shows success message
 export const showPurchaseSuccessMessage = () => {
+    // Update UI feedback (clear cart + show success message)
     const purchaseItemsContainer = document.querySelector(".purchase__items");
+
     if (!purchaseItemsContainer) return;
 
-    purchaseItemsContainer.innerHTML = ""; // clear cart
+    // Clear cart of previous item(s) from container above the purchase button
+    purchaseItemsContainer.innerHTML = "";
+
+    // Create success message element
     const successMessage = document.createElement("p");
+    // Add class and text content to newly created <p> element
     successMessage.classList.add("purchase__success");
     successMessage.textContent = "✅ Purchase successful!";
 
+    // Inject message into container as the last child element of the container
     purchaseItemsContainer.appendChild(successMessage);
 
+    // Remove message after 3 seconds
     setTimeout(() => {
+        // add fade-out class to trigger CSS transition for the message
         successMessage.classList.add("fade-out");
+        // remove message from DOM after fade-out transition completes (0.5s)
         setTimeout(() => (purchaseItemsContainer.innerHTML = ""), 500);
     }, 2500);
 };
@@ -104,6 +114,7 @@ export const purchaseMineral = async () => {
 
     // Identify the selected colony based on governor's colonyId
     const colonyId = selectedGovernor.colonyId;
+    // variable to access the selected colony object which will be updated and PUT to API after purchase
     const selectedColony = colonies.find(c => c.id === colonyId);
     if (!selectedColony) {
         console.error("Colony not found");
@@ -111,34 +122,39 @@ export const purchaseMineral = async () => {
     }
 
     // Identify the selected facility
+    // variable to access the selected facility object which will be updated and PUT to API after purchase
     const selectedFacility = facilities.find(f => f.id === facilityId);
     if (!selectedFacility) {
         console.error("Facility not found");
         return;
     }
 
-    // Update the colony inventory
-    const selectedMineralName = mineralName; // assuming you store the mineral name directly
+    // mineral name from transient state
+    const selectedMineralName = mineralName;
+    // variable to access the colony's inventory and check if mineral exists
     let colonyMineral = selectedColony.inventory.find(m => m.mineral === selectedMineralName);
 
     if (colonyMineral) {
-        // Increment quantity
+        // Increment quantity key value in the colony's inventory if mineral exists already
         colonyMineral.quantity += 1;
     } else {
-        // Add new mineral entry
-        selectedColony.inventory.push({ mineral: mineralName, quantity: 1 });
+        // Add new mineral entry to the colony's inventory
+        selectedColony.inventory.push({ mineral: selectedMineralName, quantity: 1 });
     }
 
-    // Update the facility inventory (decrement by 1)
-    const facilityMineral = selectedFacility.inventory.find(m => m.mineral === mineralName);
+    // variable to access the facility's inventory and check if mineral exists
+    const facilityMineral = selectedFacility.inventory.find(m => m.mineral === selectedMineralName);
+
     if (facilityMineral && facilityMineral.quantity > 0) {
+        // Decrement quantity key value in the facility's inventory
         facilityMineral.quantity -= 1;
     } else {
+        // alert user if mineral is out of stock
         window.alert("This mineral is out of stock at the selected facility!");
         return;
     }
 
-    // 6️⃣ Persist changes to API (PUT both colony and facility)
+    // Persist changes to API (PUT both colony and facility)
     await fetch(`http://localhost:8088/colonies/${selectedColony.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -151,44 +167,27 @@ export const purchaseMineral = async () => {
         body: JSON.stringify(selectedFacility)
     });
 
+    // Create new purchase record in API
     const newPurchase = {
         governorId: state.governorId,
         colonyId: selectedColony.id,
         facilityId: selectedFacility.id,
-        mineralName: mineralName,
+        mineralName: selectedMineralName,
         quantity: 1
     };
 
+    // POST new purchase to the database
     await fetch("http://localhost:8088/purchases", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newPurchase)
     });
 
-    // 7️⃣ Dynamically update affected sections
+    // Dynamically update affected sections of the UI on the webpage
+    // Re-render facility minerals and colony minerals
     await updateFacilityMinerals(state.facilityId);
     await updateColonyMinerals(state.governorId);
 
-    // 8️⃣ Show success message
+    // Invoke function to show success message
     showPurchaseSuccessMessage();
-
-    // Update UI feedback (clear cart + show success message)
-    const purchaseItemsContainer = document.querySelector(".purchase__items");
-
-    // Clear previous item(s)
-    purchaseItemsContainer.innerHTML = "";
-
-    // Create success message element
-    const successMessage = document.createElement("p");
-    successMessage.classList.add("purchase__success");
-    successMessage.textContent = "✅ Purchase successful!";
-
-    // Inject message into container
-    purchaseItemsContainer.appendChild(successMessage);
-
-    // Remove message after 3 seconds
-    setTimeout(() => {
-        successMessage.classList.add("fade-out");
-        setTimeout(() => (purchaseItemsContainer.innerHTML = ""), 500);
-    }, 2500);
 };
